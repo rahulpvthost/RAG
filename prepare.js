@@ -5,12 +5,15 @@ import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 export async  function indexTheDocument(filePath){
    const loader = new PDFLoader(filePath,{splitPages:false});
    const docs = await loader.load();
-   console.log(docs[0].pageContent);
-   console.log(docs.length);
+//    console.log(docs[0].pageContent);
+//    console.log(docs.length);
 
    const textSplitter = new RecursiveCharacterTextSplitter({
      chunkSize: 500,
      chunkOverlap: 100,
 
 });
+const texts = await textSplitter.splitDocuments(docs);
+   console.log(texts[1].pageContent);
+   console.log(texts.length);
 }
