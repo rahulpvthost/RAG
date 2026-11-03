@@ -13,7 +13,8 @@
  * 1. Setup LLM
  * 2. Add retrieval step
  * 3. Pass input + relevant information to LLM
- * 4. Congratulations
+ * 4. Congratulations all done
+ * 
  */
 
 import {indexTheDocument} from './prepare.js';
